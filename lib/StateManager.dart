@@ -20,7 +20,9 @@ class StateManager extends StatelessWidget {
   }
 
   Widget _buildBody() {
+    //内部管理State
 //    return new TapboxA();
+    //外部parent管理State
     return new ParentWidget();
   }
 }
