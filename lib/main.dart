@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/Assets.dart';
+import 'package:my_flutter/StateLifeCycle.dart';
+import 'package:my_flutter/StateManager.dart';
 import 'package:my_flutter/WidgetDetail.dart';
 import 'package:my_flutter/randomWideget.dart';
 import 'package:my_flutter/tryFlutterWidget.dart';
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
     courses[5] = 'Assets';
     courses[6] = 'parent_基础Widgets';
     courses[7] = 'Widget简介';
-    courses[9] = '继承';
+    courses[9] = 'State生命周期';
+    courses[11] = 'State管理';
     return new MaterialApp(
         title: 'Startup Name Generator',
         home: new StudyApp(),
@@ -25,15 +28,15 @@ class MyApp extends StatelessWidget {
               TryFlutter(title: 'Flutter Demo Home Page'),
           '/3': (BuildContext context) => RandomWords(),
           '/5': (BuildContext context) => AssetsWidgets(),
-          '/7': (BuildContext context) => WidgetDetail(
-                title: 'Widget1',
-              ),
+          '/7': (BuildContext context) => WidgetDetail( title: 'Widget1'),
+          '/9': (BuildContext context) => RouterWidget(),
+          '/11': (BuildContext context) => StateManager(title: 'State管理',),
 //          '/9': (BuildContext context) =>JiCheng(key,Colors.blue,""),
         });
   }
 }
 
-var courses = List<String>(10);
+var courses = List<String>(50);
 
 class StudyApp extends StatefulWidget {
   @override
@@ -67,14 +70,18 @@ class _StudyAppState extends State<StudyApp> {
             } else {
               return new Divider();
             }
-          }
-          print(courses[i] + 'i=' + i.toString());
+          }else{
+            return _buildRow(i);
 
-          return _buildRow(i);
+          }
+//          print(courses[i] + 'i=' + i.toString());
+
         });
   }
 
   Widget _buildRow(int course) {
+    if(courses[course]!=null){
+
     return new ListTile(
       title: new Text(courses[course]),
       onTap: () {
@@ -82,6 +89,8 @@ class _StudyAppState extends State<StudyApp> {
         Navigator.pushNamed(context, router);
       },
     );
+    }
+
   }
 
   Widget _buildTitle(String title) {
