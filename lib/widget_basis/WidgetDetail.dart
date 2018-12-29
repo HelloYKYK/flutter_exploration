@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_flutter/BaseMaterialApp.dart';
+import 'package:my_flutter/start/BaseMaterialApp.dart';
 
 class WidgetDetail extends StatelessWidget {
   const WidgetDetail({

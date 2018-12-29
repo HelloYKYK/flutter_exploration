@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+///状态管理
 class StateManager extends StatelessWidget {
   const StateManager({
     Key key,

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+/*
+状态生命周期
+ */
 class RouterWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 //void main() => runApp(new AssetsWidgets());
-
+//资源
 class AssetsWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

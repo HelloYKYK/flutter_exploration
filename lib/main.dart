@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_flutter/Assets.dart';
-import 'package:my_flutter/StateLifeCycle.dart';
-import 'package:my_flutter/StateManager.dart';
-import 'package:my_flutter/WidgetDetail.dart';
-import 'package:my_flutter/randomWideget.dart';
-import 'package:my_flutter/tryFlutterWidget.dart';
+import 'package:my_flutter/start/Assets.dart';
+import 'package:my_flutter/widget_basis/StateLifeCycle.dart';
+import 'package:my_flutter/widget_basis/StateManager.dart';
+import 'package:my_flutter/widget_basis/WidgetDetail.dart';
+import 'package:my_flutter/widget_basis/randomWideget.dart';
+import 'package:my_flutter/start/tryFlutterWidget.dart';
 
 void main() => runApp(new MyApp());
 
