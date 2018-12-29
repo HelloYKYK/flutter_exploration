@@ -17,10 +17,16 @@ class StateManager extends StatelessWidget {
           title: new Text(title),
         ),
         body: _buildBody());
+
+
   }
 
   Widget _buildBody() {
-    return new Column(
+    return Scrollbar(
+        child: SingleChildScrollView(
+        padding: EdgeInsets.all(16.0),
+    child: Center(
+    child: Column(
       children: <Widget>[
         new Text('Widget管理自身状态'),
         new TapboxA(),
@@ -29,7 +35,7 @@ class StateManager extends StatelessWidget {
         new Text('混合管理'),
         new PrentWidgetC()
       ],
-    );
+    ))));
     //内部管理State
 //    return new TapboxA();
     //外部parent管理State

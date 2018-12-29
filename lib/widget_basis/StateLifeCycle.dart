@@ -8,6 +8,7 @@ class RouterWidget extends StatelessWidget{
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
+        title: new Text('状态生命周期'),
       ),
       body:
 //      new CounterWidget(),
