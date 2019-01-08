@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter/start/Assets.dart';
 import 'package:my_flutter/widget_basis/Buttons.dart';
+import 'package:my_flutter/widget_basis/ImageAndIcons.dart';
 import 'package:my_flutter/widget_basis/StateLifeCycle.dart';
 import 'package:my_flutter/widget_basis/StateManager.dart';
 import 'package:my_flutter/widget_basis/TextFontStyle.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
           '/7.2': (BuildContext context) => StateManager(title: 'State管理',),
           '/9': (BuildContext context) =>TextFontStyle(title: "文本、字体样式",),
           '/11': (BuildContext context) =>Buttons(title: "按钮",),
+          '/13': (BuildContext context) =>ImageAndIcons(title: "图片和Icon",),
 
         });
   }
