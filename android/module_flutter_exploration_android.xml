@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_flutter_exploration_android" default="compile.module.flutter_exploration_android">
+  <dirname property="module.flutter_exploration_android.basedir" file="${ant.file.module_flutter_exploration_android}"/>
+  
+  <property name="module.jdk.home.flutter_exploration_android" value="${jdk.home.android_api_25_platform}"/>
+  <property name="module.jdk.bin.flutter_exploration_android" value="${jdk.bin.android_api_25_platform}"/>
+  <property name="module.jdk.classpath.flutter_exploration_android" value="jdk.classpath.android_api_25_platform"/>
+  
+  <property name="compiler.args.flutter_exploration_android" value="-encoding UTF-8 -source 11 -target 11 ${compiler.args}"/>
+  
+  <property name="flutter_exploration_android.output.dir" value="undefined"/>
+  <property name="flutter_exploration_android.testoutput.dir" value="undefined"/>
+  
+  <path id="flutter_exploration_android.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="flutter_exploration_android.module.production.classpath">
+    <path refid="${module.jdk.classpath.flutter_exploration_android}"/>
+    <path refid="library.flutter_for_android.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="flutter_exploration_android.runtime.production.module.classpath">
+    <path refid="library.flutter_for_android.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="flutter_exploration_android.module.classpath">
+    <path refid="${module.jdk.classpath.flutter_exploration_android}"/>
+    <path refid="library.flutter_for_android.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  <path id="flutter_exploration_android.runtime.module.classpath">
+    <path refid="library.flutter_for_android.classpath"/>
+    <path refid="library.kotlinjavaruntime.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.flutter_exploration_android">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.flutter_exploration_android">
+    <patternset refid="excluded.from.module.flutter_exploration_android"/>
+  </patternset>
+  
+  <path id="flutter_exploration_android.module.sourcepath">
+    <dirset dir="${module.flutter_exploration_android.basedir}">
+      <include name="app/src/main/java"/>
+      <include name="app/src/main/kotlin"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.flutter_exploration_android" depends="compile.module.flutter_exploration_android.production,compile.module.flutter_exploration_android.tests" description="Compile module flutter_exploration_android"/>
+  
+  <target name="compile.module.flutter_exploration_android.production" depends="register.custom.compilers" description="Compile module flutter_exploration_android; production classes">
+    <mkdir dir="${flutter_exploration_android.output.dir}"/>
+    <javac2 destdir="${flutter_exploration_android.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.flutter_exploration_android}/javac">
+      <compilerarg line="${compiler.args.flutter_exploration_android}"/>
+      <bootclasspath refid="flutter_exploration_android.module.bootclasspath"/>
+      <classpath refid="flutter_exploration_android.module.production.classpath"/>
+      <src refid="flutter_exploration_android.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.flutter_exploration_android"/>
+    </javac2>
+    
+    <copy todir="${flutter_exploration_android.output.dir}">
+      <fileset dir="${module.flutter_exploration_android.basedir}/app/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.flutter_exploration_android.basedir}/app/src/main/kotlin">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.flutter_exploration_android.tests" depends="register.custom.compilers,compile.module.flutter_exploration_android.production" description="compile module flutter_exploration_android; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.flutter_exploration_android" description="cleanup module">
+    <delete dir="${flutter_exploration_android.output.dir}"/>
+    <delete dir="${flutter_exploration_android.testoutput.dir}"/>
+  </target>
+</project>
