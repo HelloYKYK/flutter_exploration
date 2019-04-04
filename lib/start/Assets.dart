@@ -1,6 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 //void main() => runApp(new AssetsWidgets());
 //资源
@@ -50,8 +51,8 @@ class AssetState extends State<AssetsWidget> {
   Widget buildImg(BuildContext context) {
     return new DecoratedBox(
         decoration: new BoxDecoration(
-            image: new DecorationImage(image: new AssetImage('graphics/gg.png'))
-            ));
+            image:
+                new DecorationImage(image: new AssetImage('graphics/gg.png'))));
   }
 
   _onClick() {

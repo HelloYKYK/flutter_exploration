@@ -20,7 +20,7 @@ class StackLayout extends StatelessWidget {
   }
 
   Widget _buildBody() {
-    new ConstrainedBox(
+   return new ConstrainedBox(
         constraints: BoxConstraints.expand(),
       child: Stack(
         alignment: Alignment.center,
