@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_flutter/group_layout/FlexLayout.dart';
+import 'package:my_flutter/group_layout/FlowLayout.dart';
+import 'package:my_flutter/group_layout/LayoutWidget.dart';
+import 'package:my_flutter/group_layout/LinearLayout.dart';
+import 'package:my_flutter/group_layout/StackLayout.dart';
 import 'package:my_flutter/start/Assets.dart';
 import 'package:my_flutter/widget_basis/Buttons.dart';
 import 'package:my_flutter/widget_basis/CheckBoxs.dart';
@@ -28,7 +33,12 @@ class MyApp extends StatelessWidget {
     courses[13] = '图片和Icon';
     courses[15] = '单选框和复选框';
     courses[17] = '输入框和表单';
-    courses[18] = '布局类Widgets';
+    courses[18] = 'parent_布局类Widgets';
+    courses[19] = '布局类Widgets简介';
+    courses[21] = '线性布局Row、Column';
+    courses[23] = '弹性布局Flex';
+    courses[25] = '流式布局Wrap、Flow';
+    courses[27] = '层叠布局Stack、Positioned';
     return new MaterialApp(
         title: 'Startup Name Generator',
         home: new StudyApp(),
@@ -46,6 +56,11 @@ class MyApp extends StatelessWidget {
           '/13': (BuildContext context) =>ImageAndIcons(title: "图片和Icon",),
           '/15': (BuildContext context) =>CheckBoxs(title: "单选框和复选框",),
           '/17': (BuildContext context) =>InputWidget(title: "输入框和表单",),
+          '/19':(BuildContext context)=>LayoutWidget(title: "布局类Widgets简介"),
+          '/21':(BuildContext context)=>LinearLayout(title:"线性布局Row、Column"),
+          '/23':(BuildContext context)=>FlexLayout(title:"弹性布局Flex"),
+          '/25':(BuildContext context)=>FlowLayout(title:"流式布局Wrap、Flow"),
+          '/27':(BuildContext context)=>StackLayout(title:"层叠布局Stack、Positioned")
 
         });
   }
