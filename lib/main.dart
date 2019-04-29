@@ -14,6 +14,7 @@ import 'package:my_flutter/widget_basis/StateLifeCycle.dart';
 import 'package:my_flutter/widget_basis/StateManager.dart';
 import 'package:my_flutter/widget_basis/TextFontStyle.dart';
 import 'package:my_flutter/widget_basis/WidgetDetail.dart';
+import 'package:my_flutter/widget_basis/YinYang.dart';
 import 'package:my_flutter/widget_basis/randomWideget.dart';
 
 void main() => runApp(new MyApp());
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
     courses[23] = '弹性布局Flex';
     courses[25] = '流式布局Wrap、Flow';
     courses[27] = '层叠布局Stack、Positioned';
+    courses[29] = '阴阳记';
     return new MaterialApp(
         title: 'Startup Name Generator',
         home: new StudyApp(),
@@ -75,7 +77,8 @@ class MyApp extends StatelessWidget {
           '/23': (BuildContext context) => FlexLayout(title: "弹性布局Flex"),
           '/25': (BuildContext context) => FlowLayout(title: "流式布局Wrap、Flow"),
           '/27': (BuildContext context) =>
-              StackLayout(title: "层叠布局Stack、Positioned")
+              StackLayout(title: "层叠布局Stack、Positioned"),
+          '/29':(BuildContext context) => YinYang(title:"阴阳记")
         });
   }
 }

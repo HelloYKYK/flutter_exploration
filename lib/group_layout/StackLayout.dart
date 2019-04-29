@@ -28,7 +28,18 @@ class StackLayout extends StatelessWidget {
           Container(
             child: Text("hello world",style: TextStyle(color: Colors.white)),
             color: Colors.red,
-
+          ),
+          Positioned(
+            left: 18.0,
+            child: Text("Jack"),
+          ) ,
+          Positioned(
+            top: 18.0,
+            child: Text("Your friend"),
+          ) ,
+          Positioned(
+            right: 18.0,
+            child: Text("Bad"),
           )
         ],
       ),
